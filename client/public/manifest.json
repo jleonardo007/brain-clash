@@ -1,0 +1,8 @@
+{
+  "short_name": "Brain Clash",
+  "name": "Brain Clash",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
