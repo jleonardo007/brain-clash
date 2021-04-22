@@ -2,8 +2,9 @@
   "name": "brain-clash-server",
   "version": "1.0.0",
   "description": "Nodejs web server for REST and real time operations.",
-  "main": "index.js",
+  "main": "server.js",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "cloudinary": "^1.25.1",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
@@ -19,8 +20,8 @@
     "nodemon": "^2.0.7"
   },
   "scripts": {
-    "dev-server": " cd src/ && nodemon index.js",
-    "prod-server": "cd src/ && node index.js"
+    "dev-server": " cd src/ && nodemon server.js",
+    "prod-server": "cd src/ && node server.js"
   },
   "repository": {
     "type": "git",

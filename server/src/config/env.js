@@ -8,4 +8,5 @@ module.exports = {
     resfreshToken: process.env.REFRESH_TOKEN,
   },
   jwtSecret: process.env.JWT_SECRET,
+  mongodbURL: process.env.MONGODB_URL,
 };
