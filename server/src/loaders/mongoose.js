@@ -12,6 +12,10 @@ module.exports = async () => {
     console.log(error);
   });
 
+  connection.on("disconnected", () => {
+    console.log("Database disconnected");
+  });
+
   await mongoose.connect(mongodbURL, {
     useNewUrlParser: true,
     useCreateIndex: true,
