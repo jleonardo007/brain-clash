@@ -6,8 +6,10 @@ const User = require("../models/user");
 
 async function verifyEmail(req, res, next) {
   const user = await User.findOne({ email: req.body.email });
-  if (user) res.status(401).json({ reason: "email is already in use" });
-  else next();
+  if (user) {
+    await fs.unlink(req.file.path);
+    res.status(401).json({ reason: "email is already in use" });
+  } else next();
 }
 
 async function signup(req, res, next) {
@@ -19,7 +21,6 @@ async function signup(req, res, next) {
     next();
   } catch (error) {
     console.log(error);
-    await fs.unlink(req.file.path);
     res.status(500).json({
       reason: "A problem has occur while server register your account, please try again!",
     });
