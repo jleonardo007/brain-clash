@@ -1,10 +1,11 @@
 const jwt = require("jsonwebtoken");
 const { jwtSecret } = require("../config/env");
 const { verifyEmail, signup, verifyPassword } = require("../middlewares/auth");
+const verifyDatabaseConnection = require("../middlewares/verifyDatabaseConnection");
 const { getAuthenticatedUser, logout } = require("../services/authServices");
 
 module.exports = (router) => {
-  router.post("/users/signup", verifyEmail, signup, async (req, res) => {
+  router.post("/users/signup", verifyDatabaseConnection, verifyEmail, signup, async (req, res) => {
     try {
       const user = await getAuthenticatedUser(req.body);
       const token = jwt.sign({ id: user._id }, jwtSecret, { expiresIn: "24h" });
@@ -21,7 +22,7 @@ module.exports = (router) => {
     }
   });
 
-  router.post("/users/signin", verifyPassword, async (req, res) => {
+  router.post("/users/signin", verifyDatabaseConnection, verifyPassword, async (req, res) => {
     try {
       const user = await getAuthenticatedUser(req.body);
       const token = jwt.sign({ id: user._id }, jwtSecret, { expiresIn: "24h" });
