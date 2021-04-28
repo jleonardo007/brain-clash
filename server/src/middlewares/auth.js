@@ -19,7 +19,10 @@ async function signup(req, res, next) {
     next();
   } catch (error) {
     console.log(error);
-    res.status(500).send("A problem has occur while register your account, try again!");
+    await fs.unlink(req.file.path);
+    res.status(500).json({
+      reason: "A problem has occur while server register your account, please try again!",
+    });
   }
 }
 
@@ -32,7 +35,7 @@ async function verifyPassword(req, res, next) {
     else res.status(401).json({ reason: "Wrong password" });
   } catch (error) {
     console.log(error);
-    res.status(401).json({ reason: "User doesn't exist!" });
+    res.status(401).json({ reason: "User doesn't exist! please register an account" });
   }
 }
 

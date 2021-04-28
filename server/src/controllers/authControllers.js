@@ -15,9 +15,9 @@ module.exports = (router) => {
       });
     } catch (error) {
       console.log(error);
-      res
-        .status(500)
-        .send("A problem has occur while server get your account info, please try again!");
+      res.status(500).json({
+        reason: "A problem has occur while server register your account, please try again!",
+      });
     }
   });
 
@@ -31,7 +31,9 @@ module.exports = (router) => {
       });
     } catch (error) {
       console.log(error);
-      res.status(500).send("A problem has occur while sign in , try again!");
+      res
+        .status(500)
+        .json({ reason: "A problem has occur while server get your account info , try again!" });
     }
   });
 
