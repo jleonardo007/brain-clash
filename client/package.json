@@ -1,14 +1,23 @@
 {
-  "name": "client",
-  "version": "0.1.0",
-  "private": true,
+  "name": "brain-clash-client",
+  "version": "1.0.0",
+  "devDependencies": {
+    "eslint-plugin-jest-dom": "^3.8.1",
+    "eslint-plugin-testing-library": "^4.1.2"
+  },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "react": "^17.0.2",
+    "react-animated-css": "^1.2.1",
     "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "socket.io-client": "^4.0.1",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
@@ -20,7 +29,9 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "plugin:testing-library/recommended",
+      "plugin:jest-dom/recommended"
     ]
   },
   "browserslist": {
@@ -34,5 +45,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "license": "ISC"
 }
