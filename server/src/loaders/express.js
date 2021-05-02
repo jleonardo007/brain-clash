@@ -8,8 +8,7 @@ const path = require("path");
 const storage = multer.diskStorage({
   destination: path.join(__dirname, "../public/uploads"),
   filename: (req, file, cb) => {
-    const username = req.body.username.replace(/\s/, "");
-    cb(null, `${new Date().getTime()}${username}${path.extname(file.originalname)}`);
+    cb(null, `${new Date().getTime()}${path.extname(file.originalname)}`);
   },
 });
 

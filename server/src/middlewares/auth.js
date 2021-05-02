@@ -7,7 +7,7 @@ const User = require("../models/user");
 async function verifyEmail(req, res, next) {
   const user = await User.findOne({ email: req.body.email });
   if (user) {
-    await fs.unlink(req.file.path);
+    if (req.file) await fs.unlink(req.file.path);
     res.status(401).json({ reason: "email is already in use" });
   } else next();
 }

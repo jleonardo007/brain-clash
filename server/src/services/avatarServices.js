@@ -8,7 +8,9 @@ cloudinary.v2.config({
 });
 
 async function uploadAvatar(file) {
-  return cloudinary.v2.uploader.upload(file.path, { folder: cloudinaryCredentials.folder });
+  if (file)
+    return cloudinary.v2.uploader.upload(file.path, { folder: cloudinaryCredentials.folder });
+  else return "";
 }
 
 function updateAvatar() {}
