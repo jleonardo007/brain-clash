@@ -1,0 +1,47 @@
+.auth-section {
+  min-height: 100vh;
+  display: grid;
+  justify-items: center;
+  background-image: url("../../assets/hero.jpg");
+  background-size: contain;
+  background-position: center;
+  color: white;
+}
+
+.form-container {
+  min-height: 100vh;
+  padding: 1rem;
+  background-color: #0d0b0c;
+}
+
+.form-container h1 {
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 2rem;
+  text-align: center;
+  color: white;
+}
+
+.tabs-container {
+  display: flex;
+  border: 1px solid #d97014;
+  border-bottom: none;
+}
+
+.signup-tab,
+.signin-tab {
+  width: 50%;
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  cursor: pointer;
+}
+
+.signup-tab:hover,
+.signin-tab:hover {
+  color: #d97014;
+}
+
+.signin-tab {
+  border-left: 1px solid #d97014;
+}

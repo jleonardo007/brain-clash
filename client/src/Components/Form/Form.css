@@ -1,0 +1,72 @@
+.auth-form {
+  height: 85%;
+  border: 1px solid #d97014;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.form-control {
+  height: 15%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1rem 0 1rem;
+}
+
+.form-control label {
+  margin-left: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.form-control input {
+  border-radius: 0.8rem;
+}
+
+.form-control input[type="email"],
+input[type="password"] {
+  width: 90%;
+  height: 25px;
+  margin: 0 auto;
+  font-size: 1rem;
+  padding-left: 1rem;
+}
+
+.form-control input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+.form-control button[type="submit"] {
+  width: 50%;
+  height: 40px;
+  margin: 0 auto;
+  border-radius: 1rem;
+  font-size: 1rem;
+  background-color: #8c1a0f;
+  color: white;
+  font-weight: bold;
+}
+
+.form-control button[type="submit"]:active {
+  background-color: #d97014;
+}
+
+.server-unauth-responses,
+.avatar-control {
+  display: grid;
+  place-items: center;
+}
+
+.server-unauth-responses {
+  height: 10%;
+  padding-top: 0.5rem;
+}
+
+.response {
+  width: 300px;
+  color: red;
+  font-weight: bold;
+  text-align: center;
+}
+
+.avatar-control {
+  height: 30%;
+  padding: 0%;
+}

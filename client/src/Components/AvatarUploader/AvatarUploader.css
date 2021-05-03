@@ -1,0 +1,15 @@
+.avatar-preview {
+  height: 100px;
+  width: 100px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background-color: grey;
+  background-size: cover;
+}
+
+.avatar-upload-btn {
+  font-size: 2rem;
+  background: none;
+  color: white;
+}
