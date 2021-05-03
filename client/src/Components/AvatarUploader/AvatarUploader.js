@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
+import validateImage from "../../utils/validateImage";
 import "./AvatarUploader.css";
 
 function AvatarUploader() {
@@ -29,10 +30,7 @@ function AvatarUploader() {
   }
 
   function handleAvatarUpload(e) {
-    const allowedExtensions = ["jpeg", "jpg", "png", "webp"];
     const file = e.target.files[0];
-    let name = null;
-    let fileExtension = null;
 
     const reader = new FileReader();
 
@@ -46,15 +44,8 @@ function AvatarUploader() {
     });
 
     if (file) {
-      reader.readAsDataURL(file);
-      name = file.name;
-      fileExtension = name.split(".").pop();
-
-      console.log(fileExtension);
-
-      if (!allowedExtensions.includes(fileExtension)) {
-        alert("file type not allowed");
-      }
+      if (validateImage(file)) reader.readAsDataURL(file);
+      else alert("Upload a image only!");
     }
   }
 
