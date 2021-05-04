@@ -3,6 +3,12 @@ import { useReducer, useLayoutEffect } from "react";
 import Auth from "./Components/Auth/Auth";
 import Home from "./Components/Home/Home";
 import Form from "./Components/Form/Form";
+import Singleplayer from "./Components/Singleplayer/Singleplayer";
+import Multiplayer from "./Components/Multiplayer/Multiplayer";
+import Ranking from "./Components/Ranking/Ranking";
+import CompisList from "./Components/CompisList/CompisList";
+import { Profile } from "./Components/Profile/Profile";
+import Navbar from "./Components/Navbar/Navbar";
 
 const initialState = {
   user: null,
@@ -31,9 +37,21 @@ function authReducer(authState, action) {
         ...authState,
         toggleForms: !authState.toggleForms,
       };
+    case "UPDATE_USER":
+      return {
+        ...authState,
+        user: action.user,
+      };
 
-    default:
-      return authState;
+    case "NEW_TOKEN":
+      return {
+        ...authState,
+        token: action.token,
+      };
+
+    default: {
+      throw new Error(`Unhandled action type: ${action.type}`);
+    }
   }
 }
 
@@ -49,12 +67,42 @@ function App() {
     }
   }, []);
 
-  /**
-   * TODO: usar context para manejar la data user y token
-   */
-
   return authState.user ? (
-    <Home />
+    <Home
+      singleplayer={
+        <Singleplayer
+          user={authState.user}
+          token={authState.token}
+          navbar={<Navbar user={authState.user} />}
+          dispatch={dispatch}
+        />
+      }
+      multiplayer={
+        <Multiplayer
+          user={authState.user}
+          token={authState.token}
+          navbar={<Navbar user={authState.user} />}
+          dispatch={dispatch}
+        />
+      }
+      ranking={<Ranking utoken={authState.token} navbar={<Navbar user={authState.user} />} />}
+      compis={
+        <CompisList
+          user={authState.user}
+          token={authState.token}
+          navbar={<Navbar user={authState.user} />}
+          dispatch={dispatch}
+        />
+      }
+      profile={
+        <Profile
+          user={authState.user}
+          token={authState.token}
+          navbar={<Navbar user={authState.user} />}
+          dispatch={dispatch}
+        />
+      }
+    />
   ) : (
     <Auth
       toggleForms={authState.toggleForms}
