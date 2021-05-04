@@ -1,0 +1,11 @@
+.profile-thumbnail {
+  width: 7vh;
+  height: 7vh;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+}
+
+.profile {
+  min-height: 100vh;
+}

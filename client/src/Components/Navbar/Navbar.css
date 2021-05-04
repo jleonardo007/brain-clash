@@ -1,0 +1,19 @@
+.navbar {
+  height: 8vh;
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+}
+
+.navbar-item {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+}
+
+.new-notifications-counter {
+  font-size: 0.8rem;
+  margin-left: 0.3rem;
+}
