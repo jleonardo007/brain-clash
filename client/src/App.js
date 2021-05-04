@@ -85,7 +85,7 @@ function App() {
           dispatch={dispatch}
         />
       }
-      ranking={<Ranking utoken={authState.token} navbar={<Navbar user={authState.user} />} />}
+      ranking={<Ranking token={authState.token} navbar={<Navbar user={authState.user} />} />}
       compis={
         <CompisList
           user={authState.user}
