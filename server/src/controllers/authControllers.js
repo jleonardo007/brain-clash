@@ -2,12 +2,12 @@ const jwt = require("jsonwebtoken");
 const { jwtSecret } = require("../config/env");
 const { verifyEmail, signup, verifyPassword } = require("../middlewares/auth");
 const verifyDatabaseConnection = require("../middlewares/verifyDatabaseConnection");
-const { getAuthenticatedUser, logout } = require("../services/authServices");
+const { getUser } = require("../services/authServices");
 
 module.exports = (router) => {
   router.post("/users/signup", verifyDatabaseConnection, verifyEmail, signup, async (req, res) => {
     try {
-      const user = await getAuthenticatedUser(req.body);
+      const user = await getUser(req.body);
       const token = jwt.sign({ id: user._id }, jwtSecret, { expiresIn: "24h" });
 
       res.json({
@@ -24,7 +24,7 @@ module.exports = (router) => {
 
   router.post("/users/signin", verifyDatabaseConnection, verifyPassword, async (req, res) => {
     try {
-      const user = await getAuthenticatedUser(req.body);
+      const user = await getUser(req.body);
       const token = jwt.sign({ id: user._id }, jwtSecret, { expiresIn: "24h" });
       res.json({
         user,
@@ -36,9 +36,5 @@ module.exports = (router) => {
         .status(500)
         .json({ reason: "A problem has occur while server get your account info , try again!" });
     }
-  });
-
-  router.get("/users/logout", (req, res) => {
-    logout();
   });
 };

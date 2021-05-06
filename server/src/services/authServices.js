@@ -16,16 +16,12 @@ async function saveUser({ email, username, password, ...meta }, { public_id, sec
   return user.save();
 }
 
-async function getAuthenticatedUser({ email }) {
+async function getUser({ email }) {
   return User.findOne({ email }, { password: 0 });
-}
-
-function logout() {
-  console.log("logout");
 }
 
 module.exports = {
   saveUser,
-  getAuthenticatedUser,
+  getUser,
   logout,
 };
