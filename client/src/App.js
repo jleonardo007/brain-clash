@@ -5,8 +5,6 @@ import Home from "./Components/Home/Home";
 import Form from "./Components/Form/Form";
 import Singleplayer from "./Components/Singleplayer/Singleplayer";
 import Multiplayer from "./Components/Multiplayer/Multiplayer";
-import Ranking from "./Components/Ranking/Ranking";
-import CompisList from "./Components/CompisList/CompisList";
 import { Profile } from "./Components/Profile/Profile";
 import Navbar from "./Components/Navbar/Navbar";
 
@@ -37,6 +35,7 @@ function authReducer(authState, action) {
         ...authState,
         toggleForms: !authState.toggleForms,
       };
+
     case "UPDATE_USER":
       return {
         ...authState,
@@ -79,15 +78,6 @@ function App() {
       }
       multiplayer={
         <Multiplayer
-          user={authState.user}
-          token={authState.token}
-          navbar={<Navbar user={authState.user} />}
-          dispatch={dispatch}
-        />
-      }
-      ranking={<Ranking token={authState.token} navbar={<Navbar user={authState.user} />} />}
-      compis={
-        <CompisList
           user={authState.user}
           token={authState.token}
           navbar={<Navbar user={authState.user} />}

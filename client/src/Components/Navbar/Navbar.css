@@ -3,11 +3,14 @@
   display: flex;
   justify-content: space-evenly;
   list-style: none;
+  border-bottom: 1px solid black;
+  background-color: burlywood;
 }
 
 .navbar-item {
   flex-grow: 1;
   display: flex;
+  justify-content: center;
   align-items: center;
   padding-left: 1rem;
   font-size: 1.5rem;
