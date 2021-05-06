@@ -22,11 +22,6 @@ const multiplayerSchema = new Schema({
   badges: [String],
 });
 
-const compiSchema = new Schema({
-  id: String,
-  username: String,
-});
-
 const metaDataSchema = new Schema({
   signupDate: String,
   signinDate: String,
@@ -56,20 +51,6 @@ userSchema.methods.encryptPassword = async function (password) {
 
 userSchema.methods.comparePassword = async function (password) {
   return bcrypt.compare(password, this.password);
-};
-
-userSchema.methods.addNewCompi = function (compi) {
-  this.compis.push(compi);
-
-  return this.compis;
-};
-
-statisticsSchema.methods.calcWinningRate = function () {
-  const statistics = this;
-
-  if (statistics.totalGames === 0) return;
-
-  statistics.winningRate = statistics.winnings / statistics.totalGames;
 };
 
 module.exports = model("User", userSchema);
