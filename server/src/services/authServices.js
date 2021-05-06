@@ -23,5 +23,4 @@ async function getUser({ email }) {
 module.exports = {
   saveUser,
   getUser,
-  logout,
 };

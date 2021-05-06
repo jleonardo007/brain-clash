@@ -39,7 +39,6 @@ const userSchema = new Schema({
   statistics: { type: statisticsSchema, default: () => ({}) },
   singlePlayer: { type: singlePlayerSchema, default: () => ({}) },
   multiplayer: { type: multiplayerSchema, default: () => ({}) },
-  compis: [compiSchema],
   meta: { type: metaDataSchema, default: () => ({}) },
 });
 
@@ -51,6 +50,12 @@ userSchema.methods.encryptPassword = async function (password) {
 
 userSchema.methods.comparePassword = async function (password) {
   return bcrypt.compare(password, this.password);
+};
+
+metaDataSchema.methods.updateMetadata = function ({ signinDate, logoutDate }) {
+  if (signinDate) this.signinDate = signinDate;
+  else if (logoutDate) this.logoutDate = logoutDate;
+  else return;
 };
 
 module.exports = model("User", userSchema);

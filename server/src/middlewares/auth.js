@@ -8,7 +8,7 @@ async function verifyEmail(req, res, next) {
   const user = await User.findOne({ email: req.body.email });
   if (user) {
     if (req.file) await fs.unlink(req.file.path);
-    res.status(401).json({ reason: "email is already in use" });
+    res.status(401).json({ reason: "Email is already in use" });
   } else next();
 }
 
@@ -17,7 +17,7 @@ async function signup(req, res, next) {
     const avatar = await uploadAvatar(req.file);
     const user = await saveUser(req.body, avatar);
     emitter.emit("user:signup", user);
-    await fs.unlink(req.file.path);
+    if (req.file) await fs.unlink(req.file.path);
     next();
   } catch (error) {
     console.log(error);
@@ -40,8 +40,24 @@ async function verifyPassword(req, res, next) {
   }
 }
 
+async function updateUserMetadata(req, res, next) {
+  try {
+    const user = await User.findOne({ email: req.body.email });
+    user.meta.updateMetadata(req.body);
+
+    await user.save();
+    next();
+  } catch (error) {
+    console.log(error);
+    res
+      .status(500)
+      .json({ reason: "A problem has occur while server get your account info , try again" });
+  }
+}
+
 module.exports = {
   verifyEmail,
   signup,
   verifyPassword,
+  updateUserMetadata,
 };
