@@ -11,9 +11,15 @@ function Form({ toggleForms, dispacth }) {
     e.preventDefault();
     const fd = new FormData(e.target);
     const email = fd.get("email");
-    const keeploggedUser = fd.get("remember-me");
+    const keepUserLogged = fd.get("remember-me");
 
-    if (!toggleForms) fd.append("username", email.split("@")[0]);
+    if (!toggleForms) {
+      fd.append("username", email.split("@")[0]);
+      fd.append("signupDate", new Date(Date.now()));
+      fd.append("signinDate", new Date(Date.now()));
+    } else {
+      fd.append("signinDate", new Date(Date.now()));
+    }
 
     const authResponse = await fetch(
       `http://localhost:5000/users/${toggleForms ? "signin" : "signup"}`,
@@ -28,7 +34,7 @@ function Form({ toggleForms, dispacth }) {
     if (authResponse.status === 401 || authResponse.status === 500) setResponses(result);
     else dispacth({ type: "AUTHENTICATE", result });
 
-    if (keeploggedUser) saveCredentials(result);
+    if (keepUserLogged && authResponse.status === 200) saveCredentials(result);
   }
 
   return (
