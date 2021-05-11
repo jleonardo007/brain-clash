@@ -5,7 +5,7 @@ import { faCamera } from "@fortawesome/free-solid-svg-icons";
 import validateImage from "../../utils/validateImage";
 import "./AvatarUploader.css";
 
-function AvatarUploader() {
+function AvatarUploader({ avatar }) {
   const fileRef = useRef(null);
   const [uploaderState, setUploaderState] = useState({
     avatar: "",
@@ -53,7 +53,7 @@ function AvatarUploader() {
     <div
       className="avatar-preview"
       style={{
-        backgroundImage: `url(${uploaderState.avatar})`,
+        backgroundImage: `url(${!uploaderState.avatar ? avatar : uploaderState.avatar})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
