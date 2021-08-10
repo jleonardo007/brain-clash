@@ -4,24 +4,8 @@
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-.form-control {
-  height: 15%;
-  display: flex;
-  flex-direction: column;
-  padding: 1rem 1rem 0 1rem;
-}
-
-.form-control label {
-  margin-left: 1.5rem;
-  margin-bottom: 0.25rem;
-}
-
-.form-control input {
-  border-radius: 0.8rem;
-}
-
-.form-control input[type="email"],
-input[type="password"] {
+.email-input,
+.password-input {
   width: 90%;
   height: 25px;
   margin: 0 auto;
@@ -29,11 +13,11 @@ input[type="password"] {
   padding-left: 1rem;
 }
 
-.form-control input[type="checkbox"] {
+.keep-logged-input {
   margin-right: 0.5rem;
 }
 
-.form-control button[type="submit"] {
+.submit-auth-btn {
   width: 50%;
   height: 40px;
   margin: 0 auto;
@@ -44,7 +28,7 @@ input[type="password"] {
   font-weight: bold;
 }
 
-.form-control button[type="submit"]:active {
+.submit-auth-btn:active {
   background-color: #d97014;
 }
 

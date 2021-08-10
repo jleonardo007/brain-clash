@@ -1,10 +1,7 @@
+import setToggleForms from "../../handlers/auth";
 import "./Auth.css";
 
-function Auth({ toggleForms, dispatch, form }) {
-  function handleToggleForms() {
-    dispatch({ type: "TOGGLE_FORMS" });
-  }
-
+export default function Auth({ toggleForms, dispatch, Form }) {
   return (
     <section className="auth-section">
       <div className="form-container">
@@ -13,7 +10,7 @@ function Auth({ toggleForms, dispatch, form }) {
           <div
             className="signup-tab"
             onClick={() => {
-              if (toggleForms) handleToggleForms();
+              if (toggleForms) setToggleForms(dispatch);
             }}
             style={{ color: `${!toggleForms ? "#d97014" : ""}` }}
           >
@@ -22,17 +19,15 @@ function Auth({ toggleForms, dispatch, form }) {
           <div
             className="signin-tab"
             onClick={() => {
-              if (!toggleForms) handleToggleForms();
+              if (!toggleForms) setToggleForms(dispatch);
             }}
             style={{ color: `${toggleForms ? "#d97014" : ""}` }}
           >
             <span className="tab-text">Sign in</span>
           </div>
         </div>
-        {form}
+        {Form}
       </div>
     </section>
   );
 }
-
-export default Auth;

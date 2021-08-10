@@ -1,13 +1,5 @@
 import { useReducer, useLayoutEffect } from "react";
 
-import Auth from "./Components/Auth/Auth";
-import Home from "./Components/Home/Home";
-import Form from "./Components/Form/Form";
-import Singleplayer from "./Components/Singleplayer/Singleplayer";
-import Multiplayer from "./Components/Multiplayer/Multiplayer";
-import { Profile } from "./Components/Profile/Profile";
-import Navbar from "./Components/Navbar/Navbar";
-
 const initialState = {
   user: null,
   token: null,
@@ -54,7 +46,7 @@ function authReducer(authState, action) {
   }
 }
 
-function App() {
+export default function useApp() {
   const [authState, dispatch] = useReducer(authReducer, initialState);
 
   useLayoutEffect(() => {
@@ -66,40 +58,8 @@ function App() {
     }
   }, []);
 
-  return authState.user ? (
-    <Home
-      singleplayer={
-        <Singleplayer
-          user={authState.user}
-          token={authState.token}
-          navbar={<Navbar user={authState.user} />}
-          dispatch={dispatch}
-        />
-      }
-      multiplayer={
-        <Multiplayer
-          user={authState.user}
-          token={authState.token}
-          navbar={<Navbar user={authState.user} />}
-          dispatch={dispatch}
-        />
-      }
-      profile={
-        <Profile
-          user={authState.user}
-          token={authState.token}
-          navbar={<Navbar user={authState.user} />}
-          dispatch={dispatch}
-        />
-      }
-    />
-  ) : (
-    <Auth
-      toggleForms={authState.toggleForms}
-      dispatch={dispatch}
-      form={<Form toggleForms={authState.toggleForms} dispacth={dispatch} />}
-    />
-  );
+  return {
+    authState,
+    dispatch,
+  };
 }
-
-export default App;
