@@ -1,0 +1,52 @@
+.profile-settings-container {
+  width: 35vw;
+  height: 85vh;
+  padding: 1rem;
+  border-radius: 3rem;
+  position: relative;
+  background-color: royalblue;
+}
+
+.profile-settings {
+  min-height: 100%;
+}
+
+.profile-settings .form-control {
+  margin-bottom: 1rem;
+}
+
+.profile-settings label {
+  margin-bottom: 0.5rem;
+  margin-left: 0;
+}
+
+.profile-settings input {
+  height: 2vw;
+  padding: 0.5rem;
+}
+
+.avatar-settings {
+  display: grid;
+  place-items: center;
+}
+
+.settings-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 3vw;
+}
+
+.settings-buttons button {
+  width: 10vw;
+  height: 2vw;
+  display: grid;
+  place-items: center;
+  border-radius: 0.8rem;
+}
+
+.close-settings-btn {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  background: none;
+}

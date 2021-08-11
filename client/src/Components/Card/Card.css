@@ -1,0 +1,13 @@
+.card {
+  width: 3.5vw;
+  height: 3.5vw;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  background-color: darkblue;
+}
+
+.matched-card {
+  width: 3.5vw;
+  height: 3.5vw;
+}

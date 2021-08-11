@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
-
-import { ProfileThumbnail } from "../Profile/Profile";
+import { ProfileThumbnail } from "../Profile";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGamepad, faGlobeAmericas } from "@fortawesome/free-solid-svg-icons";
 import "./Navbar.css";
 
-function Navbar({ user }) {
+export default function Navbar({ user }) {
   return (
     <ul className="navbar">
       <li className="navbar-item">
@@ -26,5 +25,3 @@ function Navbar({ user }) {
     </ul>
   );
 }
-
-export default Navbar;

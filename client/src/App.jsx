@@ -1,10 +1,10 @@
 import Auth from "./Components/Auth";
 import Home from "./Components/Home";
 import Form from "./Components/Form";
-import Singleplayer from "./Components/Singleplayer/Singleplayer";
-import Multiplayer from "./Components/Multiplayer/Multiplayer";
-import Navbar from "./Components/Navbar/Navbar";
-import { Profile } from "./Components/Profile/Profile";
+import Singleplayer from "./Components/Singleplayer";
+import Multiplayer from "./Components/Multiplayer";
+import Navbar from "./Components/Navbar";
+import { Profile } from "./Components/Profile";
 import useApp from "./hooks/use-app";
 
 export default function App() {
@@ -16,7 +16,7 @@ export default function App() {
         <Singleplayer
           user={authState.user}
           token={authState.token}
-          navbar={<Navbar user={authState.user} />}
+          Navbar={<Navbar user={authState.user} />}
           dispatch={dispatch}
         />
       }
@@ -24,7 +24,7 @@ export default function App() {
         <Multiplayer
           user={authState.user}
           token={authState.token}
-          navbar={<Navbar user={authState.user} />}
+          Navbar={<Navbar user={authState.user} />}
           dispatch={dispatch}
         />
       }
@@ -32,7 +32,7 @@ export default function App() {
         <Profile
           user={authState.user}
           token={authState.token}
-          navbar={<Navbar user={authState.user} />}
+          Navbar={<Navbar user={authState.user} />}
           dispatch={dispatch}
         />
       }

@@ -1,12 +1,10 @@
 import "./Multiplayer.css";
 
-function Multiplayer({ user, token, navbar, dispatch }) {
+export default function Multiplayer({ user, token, Navbar, dispatch }) {
   return (
     <section className="multiplayer">
-      {navbar}
+      {Navbar}
       <h1>Multiplayer</h1>
     </section>
   );
 }
-
-export default Multiplayer;

@@ -1,3 +1,9 @@
 .singleplayer {
   min-height: 100vh;
 }
+
+.singleplayer-container {
+  min-height: 92vh;
+  display: grid;
+  grid-template-columns: 25vw 75vw;
+}

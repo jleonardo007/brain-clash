@@ -1,0 +1,29 @@
+.score-container {
+  width: 35vw;
+  height: 45vh;
+  padding: 1rem;
+  border-radius: 3rem;
+  position: relative;
+  background-color: royalblue;
+}
+
+.score-title {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.score-container .score {
+  height: 100px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 2rem;
+}
+
+.score-btn button {
+  width: 10vw;
+  height: 2vw;
+  display: grid;
+  place-items: center;
+  margin: 0 auto;
+  border-radius: 0.8rem;
+}

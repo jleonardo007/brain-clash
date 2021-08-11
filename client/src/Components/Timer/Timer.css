@@ -1,0 +1,12 @@
+.timer-container {
+  min-height: 3vh;
+  display: grid;
+  align-items: center;
+}
+
+.timer-bar {
+  width: 0;
+  height: 2vh;
+  border-radius: 0.5rem;
+  background-color: coral;
+}
