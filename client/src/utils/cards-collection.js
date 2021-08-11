@@ -63,261 +63,327 @@ import card62 from "../assets/cards/card62.png";
 import card63 from "../assets/cards/card63.png";
 import card64 from "../assets/cards/card64.png";
 
-export default [
+const cards = [
   {
     name: "card1",
     path: card1,
+    hasMatched: false,
   },
   {
     name: "card2",
     path: card2,
+    hasMatched: false,
   },
   {
     name: "card3",
     path: card3,
+    hasMatched: false,
   },
   {
     name: "card4",
     path: card4,
+    hasMatched: false,
   },
   {
     name: "card5",
     path: card5,
+    hasMatched: false,
   },
   {
     name: "card6",
     path: card6,
+    hasMatched: false,
   },
   {
     name: "card7",
     path: card7,
+    hasMatched: false,
   },
   {
     name: "card8",
     path: card8,
+    hasMatched: false,
   },
   {
     name: "card9",
     path: card9,
+    hasMatched: false,
   },
   {
     name: "card10",
     path: card10,
+    hasMatched: false,
   },
   {
     name: "card11",
     path: card11,
+    hasMatched: false,
   },
   {
     name: "card12",
     path: card12,
+    hasMatched: false,
   },
   {
     name: "card13",
     path: card13,
+    hasMatched: false,
   },
   {
     name: "card14",
     path: card14,
+    hasMatched: false,
   },
   {
     name: "card15",
     path: card15,
+    hasMatched: false,
   },
   {
     name: "card16",
     path: card16,
+    hasMatched: false,
   },
   {
     name: "card17",
     path: card17,
+    hasMatched: false,
   },
   {
     name: "card18",
     path: card18,
+    hasMatched: false,
   },
   {
     name: "card19",
     path: card19,
+    hasMatched: false,
   },
   {
     name: "card20",
     path: card20,
+    hasMatched: false,
   },
   {
     name: "card21",
     path: card21,
+    hasMatched: false,
   },
   {
     name: "card22",
     path: card22,
+    hasMatched: false,
   },
   {
     name: "card23",
     path: card23,
+    hasMatched: false,
   },
   {
     name: "card24",
     path: card24,
+    hasMatched: false,
   },
   {
     name: "card25",
     path: card25,
+    hasMatched: false,
   },
   {
     name: "card26",
     path: card26,
+    hasMatched: false,
   },
   {
     name: "card27",
     path: card27,
+    hasMatched: false,
   },
   {
     name: "card28",
     path: card28,
+    hasMatched: false,
   },
   {
     name: "card29",
     path: card29,
+    hasMatched: false,
   },
   {
     name: "card30",
     path: card30,
+    hasMatched: false,
   },
   {
     name: "card31",
     path: card31,
+    hasMatched: false,
   },
   {
     name: "card32",
     path: card32,
+    hasMatched: false,
   },
   {
     name: "card33",
     path: card33,
+    hasMatched: false,
   },
   {
     name: "card34",
     path: card34,
+    hasMatched: false,
   },
   {
     name: "card35",
     path: card35,
+    hasMatched: false,
   },
   {
     name: "card36",
     path: card36,
+    hasMatched: false,
   },
   {
     name: "card37",
     path: card37,
+    hasMatched: false,
   },
   {
     name: "card38",
     path: card38,
+    hasMatched: false,
   },
   {
     name: "card39",
     path: card39,
+    hasMatched: false,
   },
   {
     name: "card40",
     path: card40,
+    hasMatched: false,
   },
   {
     name: "card41",
     path: card41,
+    hasMatched: false,
   },
   {
     name: "card42",
     path: card42,
+    hasMatched: false,
   },
   {
     name: "card43",
     path: card43,
+    hasMatched: false,
   },
   {
     name: "card44",
     path: card44,
+    hasMatched: false,
   },
   {
     name: "card45",
     path: card45,
+    hasMatched: false,
   },
   {
     name: "card46",
     path: card46,
+    hasMatched: false,
   },
   {
     name: "card47",
     path: card47,
+    hasMatched: false,
   },
   {
     name: "card48",
     path: card48,
+    hasMatched: false,
   },
   {
     name: "card49",
     path: card49,
+    hasMatched: false,
   },
   {
     name: "card50",
     path: card50,
+    hasMatched: false,
   },
   {
     name: "card51",
     path: card51,
+    hasMatched: false,
   },
   {
     name: "card52",
     path: card52,
+    hasMatched: false,
   },
   {
     name: "card53",
     path: card53,
+    hasMatched: false,
   },
   {
     name: "card54",
     path: card54,
+    hasMatched: false,
   },
   {
     name: "card55",
     path: card55,
+    hasMatched: false,
   },
   {
     name: "card56",
     path: card56,
+    hasMatched: false,
   },
   {
     name: "card57",
     path: card57,
+    hasMatched: false,
   },
   {
     name: "card58",
     path: card58,
+    hasMatched: false,
   },
   {
     name: "card59",
     path: card59,
+    hasMatched: false,
   },
   {
     name: "card60",
     path: card60,
+    hasMatched: false,
   },
   {
     name: "card61",
     path: card61,
+    hasMatched: false,
   },
   {
     name: "card62",
     path: card62,
+    hasMatched: false,
   },
   {
     name: "card63",
     path: card63,
+    hasMatched: false,
   },
   {
     name: "car64",
     path: card64,
+    hasMatched: false,
   },
 ];
+
+export default cards;

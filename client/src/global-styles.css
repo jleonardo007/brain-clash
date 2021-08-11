@@ -24,3 +24,10 @@
 .form-control input {
   border-radius: 0.8rem;
 }
+
+.points,
+.hits,
+.badges {
+  display: grid;
+  place-items: center;
+}
