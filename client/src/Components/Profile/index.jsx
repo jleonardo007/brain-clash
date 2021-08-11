@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCog } from "@fortawesome/free-solid-svg-icons";
 import ProfileSettings from "../ProfileSettings";
 import User from "../User";
-import "./Profile.css";
+import "./styles.css";
 
 const modalroot = document.getElementById("modal-root");
 

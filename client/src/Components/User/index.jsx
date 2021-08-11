@@ -1,4 +1,4 @@
-import "./User.css";
+import "./styles.css";
 
 export default function User({ user, children }) {
   const { username, avatar } = user;

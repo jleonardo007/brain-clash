@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ProfileThumbnail } from "../Profile";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGamepad, faGlobeAmericas } from "@fortawesome/free-solid-svg-icons";
-import "./Navbar.css";
+import "./styles.css";
 
 export default function Navbar({ user }) {
   return (

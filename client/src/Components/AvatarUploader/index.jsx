@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
 import useAvatarUploader from "../../hooks/use-avatar-uploader";
-import "./AvatarUploader.css";
+import "./styles.css";
 
 export default function AvatarUploader({ avatar }) {
   const { fileRef, uploaderState, ...handlers } = useAvatarUploader();

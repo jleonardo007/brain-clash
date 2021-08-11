@@ -6,7 +6,7 @@ import Score from "../Score";
 import GameInfo from "../GameInfo";
 import useSinglePlayerBoard from "../../hooks/use-singleplayer-board";
 import generateKey from "../../utils/generate-key";
-import "./Board.css";
+import "./styles.css";
 
 const modalroot = document.getElementById("modal-root");
 

@@ -1,4 +1,4 @@
-import "./Score.css";
+import "./styles.css";
 
 export default function Score({ points, hits, closeScoreWindow, children }) {
   return (

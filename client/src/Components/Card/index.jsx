@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import useCard from "../../hooks/useCard";
 import brain from "../../assets/brain.png";
-import "./Card.css";
+import "./styles.css";
 
 /**
  *

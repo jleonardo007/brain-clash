@@ -1,7 +1,7 @@
 import Timer from "../Timer";
 import Board from "../SinglePlayerBoard";
 import useSinglePlayer from "../../hooks/use-singleplayer";
-import "./Singleplayer.css";
+import "./styles.css";
 
 export default function Singleplayer({ user, token, Navbar, dispatch }) {
   const { singleplayerState, ...handlers } = useSinglePlayer(user);

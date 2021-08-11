@@ -1,4 +1,4 @@
-import "./GameInfo.css";
+import "./styles.css";
 
 export default function GameInfo({ user, boardState, children }) {
   const { username, avatar } = user;

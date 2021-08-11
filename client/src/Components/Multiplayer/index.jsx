@@ -1,4 +1,4 @@
-import "./Multiplayer.css";
+import "./styles.css";
 
 export default function Multiplayer({ user, token, Navbar, dispatch }) {
   return (

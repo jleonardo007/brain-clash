@@ -1,6 +1,6 @@
 import AvatarUploader from "../AvatarUploader";
 import useForm from "../../hooks/use-form";
-import "./Form.css";
+import "./styles.css";
 
 export default function Form({ toggleForms, dispacth }) {
   const { responses, submitAuth } = useForm(toggleForms, dispacth);

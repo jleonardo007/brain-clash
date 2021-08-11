@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 import AvatarUploader from "../AvatarUploader";
-import "./ProfileSettings.css";
+import "./styles.css";
 
 export default function ProfileSettings({ user, handleShowModal }) {
   const { username, email, avatar } = user;

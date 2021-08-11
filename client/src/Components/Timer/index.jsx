@@ -1,5 +1,5 @@
 import useTimer from "../../hooks/use-timer";
-import "./Timer.css";
+import "./styles.css";
 
 export default function Timer({ deadline, setDeadLine }) {
   const timerRef = useTimer(deadline, setDeadLine);

@@ -1,5 +1,5 @@
 import setToggleForms from "../../handlers/auth";
-import "./Auth.css";
+import "./styles.css";
 
 export default function Auth({ toggleForms, dispatch, Form }) {
   return (
