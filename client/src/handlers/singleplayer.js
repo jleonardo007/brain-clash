@@ -1,5 +1,26 @@
-function handleLevelSelection(value, setSingleplayerState, userLevels) {
-  switch (value) {
+export function removeMatchedCards(cardName, setSingleplayerState) {
+  setSingleplayerState((prevState) => {
+    prevState.cards.forEach((card, index, cards) => {
+      if (card.name === cardName) cards[index] = { ...card, hasMatched: true };
+    });
+
+    return {
+      ...prevState,
+    };
+  });
+}
+
+export function setDeadLine(setSingleplayerState) {
+  setSingleplayerState((prevState) => {
+    return {
+      ...prevState,
+      isDeadLineOver: true,
+    };
+  });
+}
+
+export function selectLevel(level, userLevels, setSingleplayerState) {
+  switch (level) {
     case "level-two":
       if (userLevels.includes("level-one"))
         setSingleplayerState((prevState) => {
@@ -7,7 +28,7 @@ function handleLevelSelection(value, setSingleplayerState, userLevels) {
             ...prevState,
             cols: 8,
             deadline: 5,
-            currentLevel: value,
+            currentLevel: level,
             shouldRenderLevel: true,
           };
         });
@@ -27,7 +48,7 @@ function handleLevelSelection(value, setSingleplayerState, userLevels) {
             ...prevState,
             cols: 10,
             deadline: 5,
-            currentLevel: value,
+            currentLevel: level,
             shouldRenderLevel: true,
           };
         });
@@ -47,7 +68,7 @@ function handleLevelSelection(value, setSingleplayerState, userLevels) {
             ...prevState,
             cols: 12,
             deadline: 7,
-            currentLevel: value,
+            currentLevel: level,
             shouldRenderLevel: true,
           };
         });
@@ -67,7 +88,7 @@ function handleLevelSelection(value, setSingleplayerState, userLevels) {
             ...prevState,
             cols: 14,
             deadline: 9,
-            currentLevel: value,
+            currentLevel: level,
             shouldRenderLevel: true,
           };
         });
@@ -94,5 +115,3 @@ function handleLevelSelection(value, setSingleplayerState, userLevels) {
       break;
   }
 }
-
-export { handleLevelSelection };
